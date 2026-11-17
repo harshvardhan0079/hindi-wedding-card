@@ -1,0 +1,787 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>शुभ विवाह | अम्बिका एवं सत्येंद्र सिंह</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --purple: #6e527e;
+  --light-purple: #f1e8f5;
+  --gold: #c49a50;
+  --dark: #3d2c43;
+  --cream: #fffaf2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  background: var(--cream);
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+section {
+  padding: 65px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+}
+
+h1, h2, h3 {
+  color: var(--purple);
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 2.1;
+  font-size: 20px;
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.small-line {
+  width: 85px;
+  height: 4px;
+  background: var(--gold);
+  margin: 18px auto 30px;
+}
+
+/* OPENING */
+
+.opening {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(rgba(255,250,242,.88), rgba(241,232,245,.94)),
+    url("") center / cover;
+  border: 12px double var(--gold);
+}
+
+.opening-content {
+  padding: 25px;
+  animation: fadeIn 2s ease;
+}
+
+.ganesh {
+  font-size: 55px;
+  margin-bottom: 15px;
+}
+
+.opening h1 {
+  font-size: clamp(35px, 7vw, 52px);
+  margin: 18px 0;
+}
+
+.opening .blessing {
+  font-size: 19px;
+  color: var(--gold);
+}
+
+.opening .names {
+  font-size: clamp(27px, 6vw, 42px);
+  margin: 25px 0;
+  color: var(--purple);
+}
+
+.opening .date {
+  letter-spacing: 20px;
+  color: var(--dark);
+  font-size: 'Playfair Display', serif;
+}
+
+/* HERO */
+
+.hero {
+  background: linear-gradient(140deg, #eee2f3, #fffaf2);
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.hero img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--gold);
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: clamp(35px, 7vw, 58px);
+}
+
+.hero .ampersand {
+  font-family: 'Playfair Display', serif;
+  font-size: 35px;
+  color: var(--gold);
+  margin: 10px;
+}
+
+.hero .subtitle {
+  margin-top: 18px;
+  font-size: 20px;
+}
+
+/* COUNTDOWN */
+
+.countdown {
+  background: var(--purple);
+  color: white;
+}
+
+.countdown h2 {
+  color: white;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 600px;
+  margin: 30px auto 0;
+}
+
+.time-box {
+  padding: 18px 8px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+}
+
+.time-box span {
+  display: block;
+  font-size: 30px;
+  color: #ffe1a6;
+  font-family: 'Playfair Display', serif;
+}
+
+.time-box small {
+  font-size: 14px;
+}
+
+/* FAMILY */
+
+.family {
+  background: #fffaf2;
+}
+
+.family-card {
+  padding: 25px;
+  border: 1px solid #dfc99e;
+  border-radius: 15px;
+  background: white;
+  margin: 20px auto;
+  max-width: 650px;
+}
+
+.family-card h3 {
+  font-size: 23px;
+  margin-bottom: 12px;
+}
+
+/* EVENTS */
+
+.events {
+  background: var(--light-purple);
+}
+
+.event-card {
+  background: white;
+  border: 1px solid #ddc89e;
+  border-radius: 15px;
+  padding: 23px 18px;
+  margin: 18px auto;
+  max-width: 650px;
+  box-shadow: 0 5px 18px rgba(60,35,70,.06);
+}
+
+.event-card h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.event-date {
+  color: var(--gold);
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* VENUE */
+
+.venue {
+  background: #fffaf2;
+}
+
+.map-button {
+  display: inline-block;
+  background: var(--purple);
+  color: white;
+  text-decoration: none;
+  padding: 13px 28px;
+  border-radius: 30px;
+  margin-top: 20px;
+  border: 1px solid var(--gold);
+  font-size: 17px;
+}
+
+.map-button:hover {
+  background: var(--gold);
+}
+
+/* GALLERY */
+
+.gallery {
+  background: var(--light-purple);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  max-width: 650px;
+  margin: 25px auto;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  max-height: 650px;
+  object-fit: contain;
+  border-radius: 20px;
+  border: 5px solid white;
+  background: white;
+  box-shadow: 0 5px 18px rgba(0,0,0,.15);
+}
+
+/* FAMILY TEXT FONT FIX */
+
+.closing p {
+  font-size: 27px !important;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.closing h2 {
+  font-size: 34px !important;
+  line-height: 1.5;
+}
+
+.closing .signature {
+  font-size: 42px !important;
+  line-height: 1.5;
+  color: #ffdf9e;
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .closing p {
+    font-size: 22px !important;
+  }
+
+  .closing h2 {
+    font-size: 29px !important;
+  }
+
+  .closing .signature {
+    font-size: 36px !important;
+  }
+}
+
+/* MUSIC BUTTON */
+
+.music-button {
+  position: fixed;
+  right: 15px;
+  bottom: 18px;
+  z-index: 1000;
+  background: var(--purple);
+  color: white;
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  padding: 12px 17px;
+  font-family: inherit;
+  font-size: 14px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.2);
+}
+
+/* PETALS */
+
+.petal {
+  position: fixed;
+  top: -30px;
+  z-index: 5;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 500px) {
+  section {
+    padding: 50px 16px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .countdown-grid {
+    gap: 7px;
+  }
+
+  .time-box {
+    padding: 13px 4px;
+  }
+
+  .time-box span {
+    font-size: 24px;
+  }
+
+  .time-box small {
+    font-size: 12px;
+  }
+
+  .gallery-grid img {
+    height: 180px;
+  }
+
+  .music-button {
+    font-size: 12px;
+    padding: 10px 13px;
+  }
+}
+.ganesh-logo {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING -->
+<section class="opening">
+  <div class="opening-content">
+    <img
+  src="./ganesh-logo.png"
+  class="ganesh-logo"
+  alt="श्री गणेश जी"
+>
+    <p class="blessing">श्री गणेशाय नमः</p>
+    <div class="small-line"></div>
+    
+    <p>शुभ विवाह</p>
+    <h1>सप्रेम आमंत्रण</h1>
+
+    <p>ईश्वर की असीम कृपा एवं बड़ों के आशीर्वाद से</p>
+
+    <div class="names">
+      सौ.का. अम्बिका कंवर
+      <br>
+      <span class="gold">एवं</span>
+      <br>
+      चि. सत्येंद्रपाल सिंह
+    </div>
+
+    <div class="small-line"></div>
+    <p class="date">12 DECEMBER 2026</p>
+  </div>
+</section>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <img src="couple.png" alt="अम्बिका एवं ">
+
+    <p class="gold">दो दिल, एक नया सफर</p>
+    <h1>अम्बिका <span class="gold">&</span> सत्येंद्रपाल सिंह</h1>
+
+    <p class="subtitle">
+      जीवन के इस शुभ अवसर पर आपकी उपस्थिति
+      हमारे लिए सौभाग्य और प्रसन्नता का विषय होगी।
+    </p>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<section class="countdown">
+  <div class="container">
+    <h2>शुभ विवाह की उलटी गिनती</h2>
+    <div class="small-line"></div>
+
+    <div class="countdown-grid">
+      <div class="time-box">
+        <span id="cd-days">00</span>
+        <small>दिन</small>
+      </div>
+
+      <div class="time-box">
+        <span id="cd-hours">00</span>
+        <small>घंटे</small>
+      </div>
+
+      <div class="time-box">
+        <span id="cd-mins">00</span>
+        <small>मिनट</small>
+      </div>
+
+      <div class="time-box">
+        <span id="cd-secs">00</span>
+        <small>सेकंड</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAMILY -->
+<section class="family">
+  <div class="container">
+    <h2>सादर आमंत्रण</h2>
+    <div class="small-line"></div>
+
+    <p>
+      हमारे परिवार में आयोजित होने जा रहे इस
+      मंगलमय विवाह समारोह में आप सपरिवार पधारकर
+      वर-वधू को अपना स्नेह एवं आशीर्वाद प्रदान करें।
+    </p>
+
+    
+
+    <div class="family-card">
+      <h3>वधू पक्ष</h3>
+      <p>
+        अंबिका शेखावत 
+        <br>
+        पुत्री एडवोकेट करणी सिंह जी शेखावत
+        <br>
+        ठिकाना - सुल्ताना (झुंझुनूं)
+        </p>
+      </p>
+    </div>
+        
+    <div class="family-card">
+      <h3>वर पक्ष</h3>
+      <p>
+        कैप्टन सत्येंद्रपाल सिंह राठौड़ 
+        <p> 
+        पुत्र ठा. साहब श्री भंवर सिंह जी राठौड़
+        <p>
+            ठिकाना - दौलतपूरा (चितावा)
+        </p>
+      </p>
+    </div>
+        
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="events">
+  <div class="container">
+    <h2>शुभ विवाह समारोह</h2>
+    <div class="small-line"></div>
+
+    <div class="event-card">
+      <h3>🌼 हल्द बान</h3>
+      <p class="event-date">गुरुवार, 10 दिसंबर 2026</p>
+      <p>प्रातः 09:15 बजे</p>
+    </div>
+
+    <div class="event-card">
+      <h3>🌺 चाक-भात</h3>
+      <p class="event-date">शुक्रवार, 11 दिसंबर 2026</p>
+      <p>दोपहर 02:15 बजे</p>
+    </div>
+
+    <div class="event-card">
+      <h3>🎶 महिला संगीत</h3>
+      <p class="event-date">शुक्रवार, 11 दिसंबर 2026</p>
+      <p>सायं 06:15 बजे</p>
+    </div>
+
+    <div class="event-card">
+      <h3>🐎 बारात आगमन</h3>
+      <p class="event-date">शनिवार, 12 दिसंबर 2026</p>
+      <p>दोपहर 03:15 बजे</p>
+    </div>
+
+    <div class="event-card">
+      <h3>💐 पाणिग्रहण संस्कार</h3>
+      <p class="event-date">शनिवार, 12 दिसंबर 2026</p>
+      <p>शुभलग्नानुसार</p>
+    </div>
+
+    <div class="event-card">
+      <h3>🌸 विदाई</h3>
+      <p class="event-date">रविवार, 13 दिसंबर 2026</p>
+      <p>दोपहर 01:15 बजे</p>
+    </div>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section class="venue">
+  <div class="container">
+    <h2>विवाह स्थल</h2>
+    <div class="small-line"></div>
+    <h3>निज निवास<h3>
+    <h3>भवानी चौक, सुलताना</h3>
+
+    <p>
+      आपका हार्दिक स्वागत एवं अभिनंदन है।
+      <br>
+      कृपया पधारकर समारोह की शोभा बढ़ाएँ।
+    </p>
+
+    <a
+      class="map-button"
+      href="https://www.google.com/maps/dir/?api=1&destination=28.131222%2C75.611889"
+      target="_blank"
+      rel="noopener">
+      📍 रास्ता देखें
+    </a>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="container">
+    <h2>यादों के कुछ खूबसूरत पल</h2>
+    <div class="small-line"></div>
+
+    <div class="gallery-grid">
+      <img src="couple.png" alt="युगल की तस्वीर">
+      <img src="ambika.jpeg" alt="अम्बिका">
+      <img src="satyendra.jpeg" alt="सतेंद्रपाल">
+      
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="container">
+    <h2>आपका स्वागत है</h2>
+    <div class="small-line"></div>
+
+    <p>
+      आपके आगमन से हमारे इस शुभ अवसर की
+      खुशियाँ और भी बढ़ जाएँगी।
+      <br>
+      सपरिवार पधारकर वर-वधू को अपना
+      स्नेह एवं आशीर्वाद प्रदान करें।
+    </p>
+
+    <div class="signature">
+      निवेदक
+    </div>
+
+    <p style="margin-top:20px;">
+       ठा. सा. रिसाल सिंह शेखावत 
+        <p>मदन सिंह </p>
+        <p>करणी सिंह एडवोकेट</p> 
+        <p>सुनील सिंह </p>
+        <p>पुत्रगण सूबेदार हनुमान सिंह जी</p>
+        <p>व समस्त शेखावत परिवार</p>
+        ठिकाना सुल्ताना (झुंझुनूं)
+    </p>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<audio id="weddingMusic" src="wedding-music.mp3" loop preload="auto"></audio>
+
+<button class="music-button" id="musicButton" onclick="toggleMusic()">
+  🎵 संगीत चालू करें
+</button>
+
+<script>
+
+/* COUNTDOWN */
+
+const weddingDate = new Date("December 12, 2026 15:15:00").getTime();
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  if (distance <= 0) {
+    document.getElementById("cd-days").textContent = "00";
+    document.getElementById("cd-hours").textContent = "00";
+    document.getElementById("cd-mins").textContent = "00";
+    document.getElementById("cd-secs").textContent = "00";
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("cd-days").textContent = String(days).padStart(2, "0");
+  document.getElementById("cd-hours").textContent = String(hours).padStart(2, "0");
+  document.getElementById("cd-mins").textContent = String(mins).padStart(2, "0");
+  document.getElementById("cd-secs").textContent = String(secs).padStart(2, "0");
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+
+/* MUSIC */
+
+const weddingMusic = document.getElementById("weddingMusic");
+const musicButton = document.getElementById("musicButton");
+
+async function toggleMusic() {
+  if (weddingMusic.paused) {
+    try {
+      await weddingMusic.play();
+      musicButton.textContent = "⏸ संगीत बंद करें";
+    } catch (error) {
+      musicButton.textContent = "🎵 दोबारा कोशिश करें";
+    }
+  } else {
+    weddingMusic.pause();
+    musicButton.textContent = "🎵 संगीत चालू करें";
+  }
+}
+
+
+/* CONTINUOUS SLOW AUTO SCROLL */
+
+const AUTO_PAUSE_TIME = 5000;
+const SCROLL_SPEED = 18; // pixels per second
+
+let autoScrollPaused = false;
+let resumeTimer = null;
+let lastFrameTime = 0;
+let animationFrame = null;
+
+function autoScroll(time) {
+  if (!lastFrameTime) {
+    lastFrameTime = time;
+  }
+
+  const deltaTime = Math.min((time - lastFrameTime) / 1000, 0.05);
+  lastFrameTime = time;
+
+  if (!autoScrollPaused) {
+    const maxScroll =
+      document.documentElement.scrollHeight - window.innerHeight;
+
+    if (window.scrollY >= maxScroll - 2) {
+      cancelAnimationFrame(animationFrame);
+      animationFrame = null;
+      return;
+    }
+
+    window.scrollBy(0, SCROLL_SPEED * deltaTime);
+  }
+
+  animationFrame = requestAnimationFrame(autoScroll);
+}
+
+function pauseAndResumeScroll() {
+  autoScrollPaused = true;
+
+  clearTimeout(resumeTimer);
+
+  resumeTimer = setTimeout(() => {
+    autoScrollPaused = false;
+    lastFrameTime = 0;
+
+    if (!animationFrame) {
+      animationFrame = requestAnimationFrame(autoScroll);
+    }
+  }, AUTO_PAUSE_TIME);
+}
+
+/* Screen interaction pauses scrolling for 5 seconds */
+
+document.addEventListener("pointerdown", pauseAndResumeScroll);
+window.addEventListener("wheel", pauseAndResumeScroll, { passive: true });
+window.addEventListener("keydown", pauseAndResumeScroll);
+
+/* Start scrolling after page loads */
+
+function startAutoScroll() {
+  if (!animationFrame) {
+    lastFrameTime = 0;
+    animationFrame = requestAnimationFrame(autoScroll);
+  }
+}
+
+if (document.readyState === "complete") {
+  startAutoScroll();
+} else {
+  window.addEventListener("load", startAutoScroll, { once: true });
+}
+
+
+/* FALLING FLOWERS */
+
+function createPetal() {
+  const petal = document.createElement("div");
+  petal.className = "petal";
+  petal.textContent = Math.random() > 0.5 ? "🌸" : "🌼";
+
+  petal.style.left = Math.random() * 100 + "vw";
+  petal.style.fontSize = (12 + Math.random() * 12) + "px";
+  petal.style.animationDuration = (7 + Math.random() * 7) + "s";
+
+  document.body.appendChild(petal);
+
+  setTimeout(() => {
+    petal.remove();
+  }, 15000);
+}
+
+setInterval(createPetal, 900);
+
+</script>
+
+</body>
+</html>
