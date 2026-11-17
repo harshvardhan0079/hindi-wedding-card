@@ -631,7 +631,8 @@ p {
 </section>
 
 <!-- MUSIC -->
-<audio id="weddingMusic" src="wedding-music.mp3" loop preload="auto"></audio>
+<audio id="weddingMusic" src="./wedding-music.mp3"
+       loop preload="auto" autoplay></audio>
 
 <button class="music-button" id="musicButton" onclick="toggleMusic()">
   🎵 संगीत चालू करें
@@ -688,7 +689,16 @@ async function toggleMusic() {
     musicButton.textContent = "🎵 संगीत चालू करें";
   }
 }
+/* TRY MUSIC AUTOPLAY */
 
+window.addEventListener("load", async () => {
+  try {
+    await weddingMusic.play();
+    musicButton.textContent = "⏸ संगीत बंद करें";
+  } catch (error) {
+    musicButton.textContent = "🎵 संगीत चालू करें";
+  }
+});
 
 /* CONTINUOUS SLOW AUTO SCROLL */
 
