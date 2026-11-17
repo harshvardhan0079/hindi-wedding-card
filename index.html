@@ -93,6 +93,14 @@ p {
   margin-bottom: 15px;
 }
 
+.ganesh-logo {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 20px;
+}
+
 .opening h1 {
   font-size: clamp(35px, 7vw, 52px);
   margin: 18px 0;
@@ -112,7 +120,7 @@ p {
 .opening .date {
   letter-spacing: 20px;
   color: var(--dark);
-  font-size: 'Playfair Display', serif;
+  font-family: 'Playfair Display', serif;
 }
 
 /* HERO */
@@ -279,7 +287,7 @@ p {
   box-shadow: 0 5px 18px rgba(0,0,0,.15);
 }
 
-/* FAMILY TEXT FONT FIX */
+/* CLOSING */
 
 .closing p {
   font-size: 27px !important;
@@ -296,21 +304,6 @@ p {
   font-size: 42px !important;
   line-height: 1.5;
   color: #ffdf9e;
-}
-
-/* Mobile */
-@media (max-width: 500px) {
-  .closing p {
-    font-size: 22px !important;
-  }
-
-  .closing h2 {
-    font-size: 29px !important;
-  }
-
-  .closing .signature {
-    font-size: 36px !important;
-  }
 }
 
 /* MUSIC BUTTON */
@@ -348,8 +341,14 @@ p {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* RESPONSIVE */
@@ -361,6 +360,18 @@ p {
 
   h2 {
     font-size: 26px;
+  }
+
+  .closing p {
+    font-size: 22px !important;
+  }
+
+  .closing h2 {
+    font-size: 29px !important;
+  }
+
+  .closing .signature {
+    font-size: 36px !important;
   }
 
   .countdown-grid {
@@ -380,20 +391,15 @@ p {
   }
 
   .gallery-grid img {
-    height: 180px;
+    height: auto;
+    max-height: 650px;
+    object-fit: contain;
   }
 
   .music-button {
     font-size: 12px;
     padding: 10px 13px;
   }
-}
-.ganesh-logo {
-  width: 130px;
-  height: 130px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto 20px;
 }
 </style>
 </head>
@@ -403,14 +409,13 @@ p {
 <!-- OPENING -->
 <section class="opening">
   <div class="opening-content">
-    <img
-  src="./ganesh-logo.png"
-  class="ganesh-logo"
-  alt="श्री गणेश जी"
->
+    <img src="./ganesh-logo.png"
+         class="ganesh-logo"
+         alt="श्री गणेश जी">
+
     <p class="blessing">श्री गणेशाय नमः</p>
     <div class="small-line"></div>
-    
+
     <p>शुभ विवाह</p>
     <h1>सप्रेम आमंत्रण</h1>
 
@@ -432,7 +437,7 @@ p {
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <img src="couple.png" alt="अम्बिका एवं ">
+    <img src="couple.png" alt="अम्बिका एवं सत्येंद्रपाल">
 
     <p class="gold">दो दिल, एक नया सफर</p>
     <h1>अम्बिका <span class="gold">&</span> सत्येंद्रपाल सिंह</h1>
@@ -486,32 +491,25 @@ p {
       वर-वधू को अपना स्नेह एवं आशीर्वाद प्रदान करें।
     </p>
 
-    
-
     <div class="family-card">
       <h3>वधू पक्ष</h3>
       <p>
-        अंबिका शेखावत 
+        अंबिका शेखावत
         <br>
         पुत्री एडवोकेट करणी सिंह जी शेखावत
         <br>
         ठिकाना - सुल्ताना (झुंझुनूं)
-        </p>
       </p>
     </div>
-        
+
     <div class="family-card">
       <h3>वर पक्ष</h3>
       <p>
-        कैप्टन सत्येंद्रपाल सिंह राठौड़ 
-        <p> 
+        कैप्टन सत्येंद्रपाल सिंह राठौड़
+        <br>
         पुत्र ठा. साहब श्री भंवर सिंह जी राठौड़
-        <p>
-            ठिकाना - दौलतपूरा (चितावा)
-        </p>
-      </p>
-    </div>
-        
+        <br>
+        ठिकाना - दौलतपूरा (चितावा)
       </p>
     </div>
   </div>
@@ -566,7 +564,7 @@ p {
   <div class="container">
     <h2>विवाह स्थल</h2>
     <div class="small-line"></div>
-    <h3>निज निवास<h3>
+    <h3>निज निवास</h3>
     <h3>भवानी चौक, सुलताना</h3>
 
     <p>
@@ -575,11 +573,10 @@ p {
       कृपया पधारकर समारोह की शोभा बढ़ाएँ।
     </p>
 
-    <a
-      class="map-button"
-      href="https://www.google.com/maps/dir/?api=1&destination=28.131222%2C75.611889"
-      target="_blank"
-      rel="noopener">
+    <a class="map-button"
+       href="https://www.google.com/maps/dir/?api=1&destination=28.131222%2C75.611889"
+       target="_blank"
+       rel="noopener">
       📍 रास्ता देखें
     </a>
   </div>
@@ -594,8 +591,7 @@ p {
     <div class="gallery-grid">
       <img src="couple.png" alt="युगल की तस्वीर">
       <img src="ambika.jpeg" alt="अम्बिका">
-      <img src="satyendra.jpeg" alt="सतेंद्रपाल">
-      
+      <img src="satyendra.jpeg" alt="सत्येंद्रपाल">
     </div>
   </div>
 </section>
@@ -614,27 +610,37 @@ p {
       स्नेह एवं आशीर्वाद प्रदान करें।
     </p>
 
-    <div class="signature">
-      निवेदक
-    </div>
+    <div class="signature">निवेदक</div>
 
     <p style="margin-top:20px;">
-       ठा. सा. रिसाल सिंह शेखावत 
-        <p>मदन सिंह </p>
-        <p>करणी सिंह एडवोकेट</p> 
-        <p>सुनील सिंह </p>
-        <p>पुत्रगण सूबेदार हनुमान सिंह जी</p>
-        <p>व समस्त शेखावत परिवार</p>
-        ठिकाना सुल्ताना (झुंझुनूं)
+      ठा. सा. रिसाल सिंह शेखावत
+      <br>
+      मदन सिंह
+      <br>
+      करणी सिंह एडवोकेट
+      <br>
+      सुनील सिंह
+      <br>
+      पुत्रगण सूबेदार हनुमान सिंह जी
+      <br>
+      व समस्त शेखावत परिवार
+      <br>
+      ठिकाना सुल्ताना (झुंझुनूं)
     </p>
   </div>
 </section>
 
 <!-- MUSIC -->
-<audio id="weddingMusic" src="./wedding-music.mp3"
-       loop preload="auto" autoplay></audio>
+<audio id="weddingMusic"
+       src="./wedding-music.mp3"
+       loop
+       preload="auto"
+       autoplay>
+</audio>
 
-<button class="music-button" id="musicButton" onclick="toggleMusic()">
+<button class="music-button"
+        id="musicButton"
+        onclick="toggleMusic()">
   🎵 संगीत चालू करें
 </button>
 
@@ -682,7 +688,6 @@ async function startMusic() {
     musicButton.textContent = "⏸ संगीत बंद करें";
     return true;
   } catch (error) {
-    // Mobile browsers often block audible autoplay until the visitor taps.
     musicButton.textContent = "🎵 संगीत चालू करें";
     return false;
   }
@@ -697,90 +702,138 @@ async function toggleMusic() {
   }
 }
 
-// Try autoplay after the page is ready. If blocked, the visible button remains.
 window.addEventListener("load", () => {
   startMusic();
 }, { once: true });
 
-/* TRY MUSIC AUTOPLAY */
+function startMusicOnFirstTap(event) {
+  if (event.target.closest("#musicButton")) return;
 
-window.addEventListener("load", async () => {
-  try {
-    await weddingMusic.play();
-    musicButton.textContent = "⏸ संगीत बंद करें";
-  } catch (error) {
-    musicButton.textContent = "🎵 संगीत चालू करें";
+  if (weddingMusic.paused) {
+    startMusic();
   }
-});
-/* CONTINUOUS SLOW AUTO SCROLL */
+
+  document.removeEventListener("pointerdown", startMusicOnFirstTap);
+}
+
+document.addEventListener("pointerdown", startMusicOnFirstTap);
+
+
+/* STEADY AUTO SCROLL */
 
 const AUTO_PAUSE_TIME = 5000;
-const SCROLL_SPEED = 25; // pixels per second, slower and smoother on phones
+const SCROLL_SPEED = 25;
 
 let autoScrollPaused = false;
 let resumeTimer = null;
-let lastFrameTime = 0;
+let lastFrameTime = null;
 let animationFrame = null;
+let reachedBottom = false;
 
-function autoScroll(time) {
-  if (!lastFrameTime) {
-    lastFrameTime = time;
+function stopAutoScrollFrame() {
+  if (animationFrame !== null) {
+    cancelAnimationFrame(animationFrame);
+    animationFrame = null;
+  }
+}
+
+function autoScrollFrame(now) {
+  animationFrame = null;
+
+  if (document.hidden || autoScrollPaused || reachedBottom) {
+    lastFrameTime = null;
+    return;
   }
 
-  const deltaTime = Math.min((time - lastFrameTime) / 1000, 0.05);
-  lastFrameTime = time;
-
-  if (!autoScrollPaused) {
-    const maxScroll =
-      document.documentElement.scrollHeight - window.innerHeight;
-
-    if (window.scrollY >= maxScroll - 2) {
-      cancelAnimationFrame(animationFrame);
-      animationFrame = null;
-      return;
-    }
-
-    window.scrollBy(0, SCROLL_SPEED * deltaTime);
+  if (lastFrameTime === null) {
+    lastFrameTime = now;
   }
 
-  animationFrame = requestAnimationFrame(autoScroll);
+  const elapsedSeconds = Math.max(0, (now - lastFrameTime) / 1000);
+  lastFrameTime = now;
+
+  const scroller = document.scrollingElement || document.documentElement;
+  const currentScroll = window.scrollY || scroller.scrollTop;
+  const maxScroll = Math.max(0, scroller.scrollHeight - window.innerHeight);
+
+  if (maxScroll - currentScroll <= 1) {
+    reachedBottom = true;
+    lastFrameTime = null;
+    return;
+  }
+
+  const nextScroll = Math.min(
+    currentScroll + SCROLL_SPEED * elapsedSeconds,
+    maxScroll
+  );
+
+  window.scrollTo(0, nextScroll);
+
+  if (maxScroll - nextScroll <= 1) {
+    reachedBottom = true;
+    lastFrameTime = null;
+    return;
+  }
+
+  animationFrame = requestAnimationFrame(autoScrollFrame);
+}
+
+function startAutoScroll() {
+  if (
+    document.hidden ||
+    autoScrollPaused ||
+    reachedBottom ||
+    animationFrame !== null
+  ) {
+    return;
+  }
+
+  lastFrameTime = null;
+  animationFrame = requestAnimationFrame(autoScrollFrame);
 }
 
 function pauseAndResumeScroll() {
+  if (reachedBottom) return;
+
   autoScrollPaused = true;
+  stopAutoScrollFrame();
+  lastFrameTime = null;
 
   clearTimeout(resumeTimer);
 
   resumeTimer = setTimeout(() => {
     autoScrollPaused = false;
-    lastFrameTime = 0;
-
-    if (!animationFrame) {
-      animationFrame = requestAnimationFrame(autoScroll);
-    }
+    startAutoScroll();
   }, AUTO_PAUSE_TIME);
 }
 
-/* Screen interaction pauses scrolling for 5 seconds */
+document.addEventListener(
+  "pointerdown",
+  pauseAndResumeScroll,
+  { passive: true }
+);
 
-document.addEventListener("pointerdown", pauseAndResumeScroll);
-window.addEventListener("wheel", pauseAndResumeScroll, { passive: true });
-window.addEventListener("keydown", pauseAndResumeScroll);
+window.addEventListener(
+  "wheel",
+  pauseAndResumeScroll,
+  { passive: true }
+);
 
-/* Start scrolling after page loads */
+window.addEventListener(
+  "keydown",
+  pauseAndResumeScroll
+);
 
-function startAutoScroll() {
-  if (!animationFrame) {
-    lastFrameTime = 0;
-    animationFrame = requestAnimationFrame(autoScroll);
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    stopAutoScrollFrame();
+    lastFrameTime = null;
+  } else {
+    startAutoScroll();
   }
-}
+});
 
-if (document.readyState === "complete") {
-  startAutoScroll();
-} else {
-  window.addEventListener("load", startAutoScroll, { once: true });
-}
+window.addEventListener("load", startAutoScroll, { once: true });
 
 
 /* FALLING FLOWERS */
