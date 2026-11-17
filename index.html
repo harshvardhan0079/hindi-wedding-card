@@ -24,7 +24,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -700,10 +700,10 @@ window.addEventListener("load", async () => {
   }
 });
 
-/* CONTINUOUS SLOW AUTO SCROLL */
+/* MOBILE + DESKTOP AUTO SCROLL */
 
 const AUTO_PAUSE_TIME = 5000;
-const SCROLL_SPEED = 18; // pixels per second
+const SCROLL_SPEED = 35;
 
 let autoScrollPaused = false;
 let resumeTimer = null;
@@ -711,24 +711,21 @@ let lastFrameTime = 0;
 let animationFrame = null;
 
 function autoScroll(time) {
-  if (!lastFrameTime) {
-    lastFrameTime = time;
-  }
+  if (!lastFrameTime) lastFrameTime = time;
 
-  const deltaTime = Math.min((time - lastFrameTime) / 1000, 0.05);
+  const delta = Math.min((time - lastFrameTime) / 1000, 0.05);
   lastFrameTime = time;
 
+  const maxScroll =
+    document.documentElement.scrollHeight - window.innerHeight;
+
+  if (window.scrollY >= maxScroll - 2) {
+    animationFrame = null;
+    return;
+  }
+
   if (!autoScrollPaused) {
-    const maxScroll =
-      document.documentElement.scrollHeight - window.innerHeight;
-
-    if (window.scrollY >= maxScroll - 2) {
-      cancelAnimationFrame(animationFrame);
-      animationFrame = null;
-      return;
-    }
-
-    window.scrollBy(0, SCROLL_SPEED * deltaTime);
+    window.scrollTo(0, window.scrollY + SCROLL_SPEED * delta);
   }
 
   animationFrame = requestAnimationFrame(autoScroll);
@@ -736,18 +733,26 @@ function autoScroll(time) {
 
 function pauseAndResumeScroll() {
   autoScrollPaused = true;
-
   clearTimeout(resumeTimer);
 
   resumeTimer = setTimeout(() => {
     autoScrollPaused = false;
     lastFrameTime = 0;
-
-    if (!animationFrame) {
-      animationFrame = requestAnimationFrame(autoScroll);
-    }
   }, AUTO_PAUSE_TIME);
 }
+
+document.addEventListener("pointerdown", pauseAndResumeScroll);
+document.addEventListener("touchstart", pauseAndResumeScroll, {
+  passive: true
+});
+
+window.addEventListener("wheel", pauseAndResumeScroll, {
+  passive: true
+});
+
+window.addEventListener("load", () => {
+  animationFrame = requestAnimationFrame(autoScroll);
+});
 
 /* Screen interaction pauses scrolling for 5 seconds */
 
