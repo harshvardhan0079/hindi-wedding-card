@@ -631,16 +631,11 @@ p {
 </section>
 
 <!-- MUSIC -->
-<audio id="weddingMusic"
-       src="./wedding-music.mp3"
-       loop
-       preload="auto"
-       autoplay>
+<audio id="weddingMusic" loop preload="auto">
+  <source src="./wedding-music.mp3" type="audio/mpeg">
 </audio>
 
-<button class="music-button"
-        id="musicButton"
-        onclick="toggleMusic()">
+<button class="music-button" id="musicButton" onclick="toggleMusic()">
   🎵 संगीत चालू करें
 </button>
 
@@ -677,7 +672,7 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 
-/* MUSIC */
+/* MUSIC AUTOPLAY */
 
 const weddingMusic = document.getElementById("weddingMusic");
 const musicButton = document.getElementById("musicButton");
@@ -686,10 +681,8 @@ async function startMusic() {
   try {
     await weddingMusic.play();
     musicButton.textContent = "⏸ संगीत बंद करें";
-    return true;
   } catch (error) {
     musicButton.textContent = "🎵 संगीत चालू करें";
-    return false;
   }
 }
 
@@ -702,21 +695,17 @@ async function toggleMusic() {
   }
 }
 
+/* Try autoplay when page opens */
 window.addEventListener("load", () => {
   startMusic();
-}, { once: true });
+});
 
-function startMusicOnFirstTap(event) {
-  if (event.target.closest("#musicButton")) return;
-
+/* Start music on the first screen interaction if autoplay was blocked */
+document.addEventListener("pointerdown", () => {
   if (weddingMusic.paused) {
     startMusic();
   }
-
-  document.removeEventListener("pointerdown", startMusicOnFirstTap);
-}
-
-document.addEventListener("pointerdown", startMusicOnFirstTap);
+}, { once: true });
 
 
 /* STEADY AUTO SCROLL */
