@@ -407,7 +407,7 @@ p {
 <body>
 
 <!-- OPENING -->
-<section class="opening">
+<section class="opening" id="openingScreen" onclick="openInvitation()"></section>
   <div class="opening-content">
     <img src="./ganesh-logo.png"
          class="ganesh-logo"
@@ -672,40 +672,34 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 
-/* MUSIC AUTOPLAY */
-
+/* MUSIC */
 const weddingMusic = document.getElementById("weddingMusic");
 const musicButton = document.getElementById("musicButton");
 
-async function startMusic() {
-  try {
-    await weddingMusic.play();
-    musicButton.textContent = "⏸ संगीत बंद करें";
-  } catch (error) {
-    musicButton.textContent = "🎵 संगीत चालू करें";
-  }
+function openInvitation() {
+  weddingMusic.play()
+    .then(() => {
+      musicButton.textContent = "⏸ संगीत बंद करें";
+    })
+    .catch((error) => {
+      console.log("Music blocked:", error);
+      musicButton.textContent = "🎵 संगीत चालू करें";
+    });
 }
 
 async function toggleMusic() {
   if (weddingMusic.paused) {
-    await startMusic();
+    try {
+      await weddingMusic.play();
+      musicButton.textContent = "⏸ संगीत बंद करें";
+    } catch (error) {
+      musicButton.textContent = "🎵 संगीत चालू करें";
+    }
   } else {
     weddingMusic.pause();
     musicButton.textContent = "🎵 संगीत चालू करें";
   }
 }
-
-/* Try autoplay when page opens */
-window.addEventListener("load", () => {
-  startMusic();
-});
-
-/* Start music on the first screen interaction if autoplay was blocked */
-document.addEventListener("pointerdown", () => {
-  if (weddingMusic.paused) {
-    startMusic();
-  }
-}, { once: true });
 
 
 /* STEADY AUTO SCROLL */
