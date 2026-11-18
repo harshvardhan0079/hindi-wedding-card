@@ -73,24 +73,29 @@ p {
 /* OPENING */
 
 .opening {
+  width: 100%;
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background:
-    linear-gradient(rgba(255,250,242,.88), rgba(241,232,245,.94)),
-    url("") center / cover;
-  border: 12px double var(--gold);
+  text-align: center;
+  padding: 35px 15px;
+  background: linear-gradient(
+    rgba(255,250,242,.88),
+    rgba(241,232,245,.94)
+  );
+  border: 8px double var(--gold);
+  cursor: pointer;
 }
 
 .opening-content {
-  padding: 25px;
+  width: 100%;
+  max-width: 850px;
+  margin: auto;
+  padding: 20px 12px;
+  text-align: center;
   animation: fadeIn 2s ease;
-}
-
-.ganesh {
-  font-size: 55px;
-  margin-bottom: 15px;
 }
 
 .ganesh-logo {
@@ -115,12 +120,20 @@ p {
   font-size: clamp(27px, 6vw, 42px);
   margin: 25px 0;
   color: var(--purple);
+  line-height: 1.8;
 }
 
 .opening .date {
-  letter-spacing: 20px;
+  letter-spacing: clamp(2px, 1.5vw, 8px);
   color: var(--dark);
   font-family: 'Playfair Display', serif;
+  font-size: clamp(17px, 4vw, 25px);
+}
+
+.opening .tap-hint {
+  font-size: 14px;
+  color: var(--gold);
+  margin-top: 25px;
 }
 
 /* HERO */
@@ -406,9 +419,11 @@ p {
 
 <body>
 
+
 <!-- OPENING -->
-<section class="opening" id="openingScreen" onclick="openInvitation()"></section>
+<section class="opening" id="openingScreen" onclick="openInvitation()">
   <div class="opening-content">
+
     <img src="./ganesh-logo.png"
          class="ganesh-logo"
          alt="श्री गणेश जी">
@@ -431,6 +446,9 @@ p {
 
     <div class="small-line"></div>
     <p class="date">12 DECEMBER 2026</p>
+
+    <p class="tap-hint">संगीत सुनने के लिए स्क्रीन पर स्पर्श करें</p>
+
   </div>
 </section>
 
